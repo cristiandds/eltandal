@@ -1,0 +1,84 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner {
+    background: url('../img/banner.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.servicios-destacados {
+    padding: 2rem;
+    text-align: center;
+}
+
+.servicios-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    background: #f4f4f4;
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    width: 30%;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicios-grid {
+        flex-direction: column;
+    }
+    .servicio {
+        width: 80%;
+        margin: 1rem auto;
+    }
+}
