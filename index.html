@@ -20,6 +20,7 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        <span class="nav-toggle">☰</span>
     </header>
 
     <!-- Banner principal -->
@@ -58,7 +59,53 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Sección de productos -->
+    <section class="productos-destacados">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="img/producto-alimentos.jpg" alt="Alimentos">
+                <h3>Alimentos Procesados</h3>
+                <p>Variedad de alimentos envasados de alta calidad, listos para la distribución mayorista.</p>
+            </div>
+            <div class="producto">
+                <img src="img/producto-ganado.jpg" alt="Ganado">
+                <h3>Productos Ganaderos</h3>
+                <p>Carne y lácteos frescos, provenientes de nuestra ganadería sostenible.</p>
+            </div>
+            <div class="producto">
+                <img src="img/producto-cereales.jpg" alt="Cereales">
+                <h3>Cereales y Granos</h3>
+                <p>Granos cultivados localmente, ideales para mercados nacionales e internacionales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+        <div class="contacto-contenido">
+            <div class="contacto-info">
+                <h3>Información de Contacto</h3>
+                <p><strong>Teléfono:</strong> +51 987654321</p>
+                <p><strong>Email:</strong> info@eltandalsrl.com</p>
+                <p><strong>Dirección:</strong> Av. Principal 123, Lima, Perú</p>
+                <p><strong>Horario:</strong> Lunes a Viernes, 8:00 - 17:00</p>
+            </div>
+            <form class="contacto-form">
+                <h3>Envíanos un Mensaje</h3>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>   
+
+    <!-- footer -->
     <footer>
         <p>&copy; 2025 El Tandal SRL. Todos los derechos reservados.</p>
     </footer>

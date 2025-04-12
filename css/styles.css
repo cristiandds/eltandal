@@ -210,48 +210,495 @@ nav ul li a.active::after {
 
 /* Servicios destacados */
 .servicios-destacados {
-    padding: 4rem 5%;
-    background: #fff;
+    padding: 5rem 5%; /* Más espacio para un look más abierto */
+    background: linear-gradient(180deg, #ffffff, #1a0404); /* Gradiente sutil */
     text-align: center;
+    position: relative;
+    overflow: hidden; /* Para efectos decorativos */
+}
+
+/* Efecto decorativo opcional (línea superior) */
+.servicios-destacados::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #ff6f61; /* Color de acento */
+    border-radius: 0 0 4px 4px;
 }
 
 .servicios-destacados h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2.2rem, 4vw, 3rem); /* Tamaño dinámico */
+    font-weight: 700;
     color: #2c3e50;
+    margin-bottom: 3rem; /* Más espacio para jerarquía */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subrayado animado para el título */
+.servicios-destacados h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.servicios-destacados h2:hover::after {
+    width: 80%; /* Animación al pasar el ratón */
 }
 
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Más ancho mínimo */
+    gap: 2.5rem; /* Mayor separación */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .servicio {
     background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.5rem; /* Más padding interno */
+    border-radius: 16px; /* Bordes más suaves */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Para efectos internos */
 }
 
+/* Efecto hover mejorado */
 .servicio:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); /* Elevación más pronunciada */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff, #fef7f5); /* Gradiente sutil al hover */
+}
+
+/* Ícono o imagen opcional */
+.servicio::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Asignar íconos o imágenes específicas (ajusta las URLs según corresponda) */
+.servicio:nth-child(1)::before {
+    background-image: url('img/icono-venta.png'); /* Ejemplo para venta al por mayor */
+}
+
+.servicio:nth-child(2)::before {
+    background-image: url('img/icono-agricultura.png'); /* Ejemplo para agricultura */
+}
+
+.servicio:nth-child(3)::before {
+    background-image: url('img/icono-salud.png'); /* Ejemplo para salud */
+}
+
+.servicio:hover::before {
+    opacity: 1;
+    transform: scale(1.1); /* Zoom sutil en el ícono */
 }
 
 .servicio h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.7rem); /* Tipografía dinámica */
+    font-weight: 600;
     color: #2c3e50;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.servicio:hover h3 {
+    color: #ff6f61; /* Cambio de color al hover */
 }
 
 .servicio p {
-    font-size: 1rem;
-    color: #666;
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+    color: #555; /* Color más oscuro para mejor contraste */
+    line-height: 1.7;
+    margin-bottom: 1rem;
 }
+
+/* Botón "Ver más" opcional */
+.servicio a {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ff6f61;
+    border: 2px solid #ff6f61;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    opacity: 0; /* Oculto por defecto */
+    transform: translateY(10px); /* Fuera de vista */
+}
+
+.servicio:hover a {
+    opacity: 1; /* Visible al hover */
+    transform: translateY(0); /* Animación de entrada */
+}
+
+.servicio a:hover {
+    background: #ff6f61;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Animación de entrada para las tarjetas */
+.servicio {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.servicio:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.servicio:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .servicios-destacados {
+        padding: 3rem 3%;
+    }
+
+    .servicios-destacados h2 {
+        font-size: 2.2rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .servicio {
+        padding: 2rem;
+    }
+
+    .servicio h3 {
+        font-size: 1.5rem;
+    }
+
+    .servicio p {
+        font-size: 0.95rem;
+    }
+
+    .servicio::before {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicios-destacados {
+        padding: 2rem 2%;
+    }
+
+    .servicios-destacados h2 {
+        font-size: 1.8rem;
+    }
+
+    .servicios-grid {
+        gap: 1rem;
+    }
+
+    .servicio {
+        padding: 1.5rem;
+    }
+
+    .servicio h3 {
+        font-size: 1.3rem;
+    }
+
+    .servicio p {
+        font-size: 0.9rem;
+    }
+
+    .servicio::before {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 1rem;
+    }
+
+    .servicio a {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+    }
+}
+
+/* Estilos para productos destacados */
+.productos-destacados {
+    padding: 5rem 5%;
+    background: linear-gradient(180deg, #f5f5f5, #e8ecef); /* Fondo con gradiente suave */
+    text-align: center;
+    position: relative;
+}
+
+.productos-destacados h2 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Subrayado decorativo para el título */
+.productos-destacados h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #f28c38, #e0440e); /* Naranja vibrante */
+    border-radius: 2px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover */
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del producto */
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.05); /* Zoom sutil */
+}
+
+/* Estilos específicos por producto */
+.producto:nth-child(1) {
+    border-left: 4px solid #f28c38; /* Naranja para Alimentos Procesados */
+}
+
+.producto:nth-child(1):hover {
+    background: linear-gradient(135deg, #fff, #fff5ee); /* Fondo con toque naranja */
+}
+
+.producto:nth-child(1) h3 {
+    color: #e0440e; /* Naranja más oscuro */
+}
+
+.producto:nth-child(2) {
+    border-left: 4px solid #2e7d32; /* Verde para Productos Ganaderos */
+}
+
+.producto:nth-child(2):hover {
+    background: linear-gradient(135deg, #fff, #e8f5e9); /* Fondo con toque verde */
+}
+
+.producto:nth-child(2) h3 {
+    color: #1b5e20; /* Verde más oscuro */
+}
+
+.producto:nth-child(3) {
+    border-left: 4px solid #0288d1; /* Azul para Cereales y Granos */
+}
+
+.producto:nth-child(3):hover {
+    background: linear-gradient(135deg, #fff, #e3f2fd); /* Fondo con toque azul */
+}
+
+.producto:nth-child(3) h3 {
+    color: #01579b; /* Azul más oscuro */
+}
+
+/* Tipografía */
+.producto h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.producto p {
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Botón "Ver más" */
+.producto a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.producto:hover a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Colores específicos para los botones */
+.producto:nth-child(1) a {
+    color: #e0440e;
+    border: 2px solid #e0440e;
+}
+
+.producto:nth-child(1) a:hover {
+    background: #e0440e;
+    color: #fff;
+}
+
+.producto:nth-child(2) a {
+    color: #1b5e20;
+    border: 2px solid #1b5e20;
+}
+
+.producto:nth-child(2) a:hover {
+    background: #1b5e20;
+    color: #fff;
+}
+
+.producto:nth-child(3) a {
+    color: #01579b;
+    border: 2px solid #01579b;
+}
+
+.producto:nth-child(3) a:hover {
+    background: #01579b;
+    color: #fff;
+}
+
+/* Animación de entrada */
+.producto {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.producto:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.producto:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .productos-destacados {
+        padding: 3rem 3%;
+    }
+
+    .productos-destacados h2 {
+        font-size: 2.2rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .producto img {
+        height: 160px;
+    }
+
+    .producto h3 {
+        font-size: 1.5rem;
+    }
+
+    .producto p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-destacados {
+        padding: 2rem 2%;
+    }
+
+    .productos-destacados h2 {
+        font-size: 1.8rem;
+    }
+
+    .producto img {
+        height: 140px;
+    }
+
+    .producto h3 {
+        font-size: 1.3rem;
+    }
+
+    .producto p {
+        font-size: 0.9rem;
+    }
+
+    .producto a {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+    }
+}
+
 
 /* Footer */
 footer {
