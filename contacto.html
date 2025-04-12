@@ -1,41 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <!-- Mismo head que index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - El Tandal SRL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
 </head>
+
 <body>
+    <!-- Barra de navegación -->
     <header>
-        <!-- Mismo header que index.html -->
+        <div class="logo">
+            <img src="img/logo.jpg" alt="El Tandal SRL">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="contacto">
-        <h2>Contáctenos</h2>
-        <div class="contacto-grid">
-            <div class="formulario">
-                <form id="contactForm">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Correo" required>
-                    <textarea placeholder="Mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Encabezado -->
+            <div class="contact-header">
+                <span class="section-subtitle">¿Cómo podemos ayudarte?</span>
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-description">Estamos aquí para responder tus preguntas y escuchar tus propuestas.</p>
             </div>
-            <div class="info">
-                <h3>Información de contacto</h3>
-                <p><strong>Teléfono:</strong> +51 987654321</p>
-                <p><strong>Email:</strong> info@eltandal.com</p>
-                <p><strong>Dirección:</strong> Cajamarca, Perú</p>
-                <!-- Mapa de Google (embed) -->
-                <div class="mapa">
-                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+            <!-- Contenido principal - Formulario + Mapa -->
+            <div class="contact-main">
+                <!-- Formulario de contacto -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre completo *</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-tag"></i>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Seleccione un asunto</option>
+                                    <option value="ventas">Consulta de ventas</option>
+                                    <option value="productos">Información de productos</option>
+                                    <option value="distribucion">Oportunidades de distribución</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Acepto la <a href="#">Política de Privacidad</a> *</label>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar mensaje</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de éxito (oculto inicialmente) -->
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle success-icon"></i>
+                        <h3>¡Mensaje enviado con éxito!</h3>
+                        <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
+                        <button id="resetForm" class="success-btn">Enviar otro mensaje</button>
+                    </div>
+                </div>
+
+                <!-- Mapa y información de contacto -->
+                <div class="contact-info-container">
+                    <!-- Mapa -->
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15896.218747224493!2d-78.520204!3d-6.774167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b03e5dd4a2910b%3A0x7f3b12c1a0a1d9b0!2sCajamarca%2C%20Peru!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            aria-label="Mapa de ubicación de El Tandal en Cajamarca"></iframe>
+                    </div>
+
+                    <!-- Información de contacto -->
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Cajamarca, Perú</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p><a href="tel:+51987654321">+51 987 654 321</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@eltandal.com">info@eltandal.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h4>Horario</h4>
+                                <p>Lun-Vie: 8:00 - 18:00<br>Sab: 9:00 - 13:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-values">
+        <div class="values-pattern"></div>
+
+        <div class="values-container">
+            <div class="values-header">
+                <span class="values-subtitle">Nuestros Fundamentos</span>
+                <h2 class="values-title">Lo que nos guía cada día</h2>
+                <p class="values-description">En El Tandal, no solo comercializamos productos, cultivamos relaciones
+                    sostenibles que generan valor para todos.</p>
+            </div>
+
+            <div class="values-grid">
+                <!-- Tarjeta de Misión -->
+                <div class="value-card mission-card">
+                    <div class="card-ornament"></div>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Nuestra Misión</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Transformar el sector agroindustrial peruano mediante prácticas sostenibles
+                            que equilibren la rentabilidad con el impacto social positivo, ofreciendo productos de
+                            máxima calidad que conecten directamente a los productores locales con los mercados
+                            nacionales e internacionales.</p>
+                        <ul class="card-features">
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Innovación en procesos agroindustriales</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Comercio justo para pequeños productores</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Trazabilidad total de nuestros productos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Visión -->
+                <div class="value-card vision-card">
+                    <div class="card-ornament"></div>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Nuestra Visión</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Ser reconocidos para el 2030 como el referente de excelencia en
+                            agroindustria sostenible en la región norte del Perú, ampliando nuestro impacto positivo al
+                            quintuplicar nuestra red de productores asociados y triplicando nuestro volumen de
+                            exportaciones con certificación de comercio justo.</p>
+                        <ul class="card-features">
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Liderazgo regional en agricultura regenerativa</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Modelo de negocio replicable en otras regiones</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>+500 familias beneficiadas directamente</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Valores corporativos -->
+            <div class="corporate-values">
+                <h3 class="corporate-title">Nuestros Valores</h3>
+                <div class="values-list">
+                    <div class="single-value">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="value-name">Integridad</h4>
+                        <p class="value-description">Actuamos con honestidad y transparencia en todas nuestras
+                            relaciones comerciales.</p>
+                    </div>
+
+                    <div class="single-value">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="value-name">Sostenibilidad</h4>
+                        <p class="value-description">Cada decisión considera su impacto ambiental y social a largo
+                            plazo.</p>
+                    </div>
+
+                    <div class="single-value">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <h4 class="value-name">Calidad</h4>
+                        <p class="value-description">Exigimos excelencia en cada etapa de nuestros procesos productivos.
+                        </p>
+                    </div>
+
+                    <div class="single-value">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4 class="value-name">Comunidad</h4>
+                        <p class="value-description">Creemos en el crecimiento compartido con nuestros colaboradores y
+                            productores.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <!-- Mismo footer que index.html -->
+        <p>&copy; 2025 El Tandal SRL. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
