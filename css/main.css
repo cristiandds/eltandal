@@ -1,0 +1,274 @@
+/* Estilos generales de la sección */
+.servicios-detalle {
+    padding: 5rem 1.5rem;
+    background-color: #f9fafb;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicios-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.servicios-subtitulo {
+    display: inline-block;
+    color: #3b82f6;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.servicios-subtitulo::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: #3b82f6;
+}
+
+.servicios-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.servicios-descripcion {
+    color: #6b7280;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Grid de servicios */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de servicio */
+.servicio-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.servicio-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #3b82f6;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    z-index: 10;
+}
+
+.servicio-premium .servicio-badge {
+    background-color: #ef4444;
+}
+
+.servicio-eco .servicio-badge {
+    background-color: #10b981;
+}
+
+.servicio-salud .servicio-badge {
+    background-color: #8b5cf6;
+}
+
+.servicio-imagen-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.servicio-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.servicio-card:hover .servicio-imagen {
+    transform: scale(1.05);
+}
+
+.servicio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.servicio-card:hover .servicio-overlay {
+    opacity: 0.5;
+}
+
+.servicio-contenido {
+    padding: 1.5rem;
+}
+
+.servicio-icono {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef2ff;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    color: #3b82f6;
+}
+
+.servicio-premium .servicio-icono {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.servicio-eco .servicio-icono {
+    background-color: #d1fae5;
+    color: #10b981;
+}
+
+.servicio-salud .servicio-icono {
+    background-color: #ede9fe;
+    color: #8b5cf6;
+}
+
+.servicio-nombre {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.servicio-descripcion {
+    color: #6b7280;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.servicio-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.servicio-beneficios li {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.check-icon {
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.servicio-cta {
+    display: inline-flex;
+    align-items: center;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.servicio-premium .servicio-cta {
+    color: #ef4444;
+}
+
+.servicio-eco .servicio-cta {
+    color: #10b981;
+}
+
+.servicio-salud .servicio-cta {
+    color: #8b5cf6;
+}
+
+.servicio-cta:hover {
+    color: #1d4ed8;
+}
+
+.servicio-premium .servicio-cta:hover {
+    color: #b91c1c;
+}
+
+.servicio-eco .servicio-cta:hover {
+    color: #047857;
+}
+
+.servicio-salud .servicio-cta:hover {
+    color: #7c3aed;
+}
+
+.arrow-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.servicio-cta:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+/* Sección extra */
+.servicios-extra {
+    text-align: center;
+    margin-top: 3rem;
+    color: #6b7280;
+    font-size: 0.9375rem;
+}
+
+.servicios-extra a {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.servicios-extra a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicios-titulo {
+        font-size: 2rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}

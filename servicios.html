@@ -1,33 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <!-- Mismo head que index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - l Tandal SRL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
+    <!-- Barra de navegación -->
     <header>
-        <!-- Mismo header que index.html -->
+        <div class="logo">
+            <img src="img/logo.jpg" alt="El Tandal SRL">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="servicios-detalle">
-        <h2>Nuestros Servicios</h2>
-        <div class="servicio-item">
-            <h3>Venta al por mayor (CIIU 4630)</h3>
-            <p>Distribución de alimentos, bebidas y tabaco para negocios y empresas.</p>
+        <div class="servicios-header">
+            <span class="servicios-subtitulo">Lo que ofrecemos</span>
+            <h2 class="servicios-titulo">Nuestros Servicios</h2>
+            <p class="servicios-descripcion">Soluciones integrales adaptadas a las necesidades de su negocio con los más
+                altos estándares de calidad</p>
         </div>
-        <div class="servicio-item">
-            <h3>Explotación Agrícola y Pecuaria (CIIU 0150)</h3>
-            <p>Cultivos sostenibles y cría de animales en sistema integrado.</p>
+
+        <div class="servicios-grid">
+            <article class="servicio-card servicio-premium">
+                <div class="servicio-badge">Popular</div>
+                <div class="servicio-imagen-container">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Venta al por mayor" class="servicio-imagen" loading="lazy">
+                    <div class="servicio-overlay"></div>
+                </div>
+                <div class="servicio-contenido">
+                    <div class="servicio-icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="servicio-nombre">Venta al por Mayor</h3>
+                    <p class="servicio-descripcion">Distribución profesional de alimentos, bebidas y tabaco para
+                        negocios con estándares de calidad certificados y logística optimizada.</p>
+                    <ul class="servicio-beneficios">
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Precios competitivos</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Amplio catálogo</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Entrega garantizada</li>
+                    </ul>
+                    <a href="#contacto" class="servicio-cta">
+                        Consultar condiciones
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="servicio-card servicio-eco">
+                <div class="servicio-badge">Ecológico</div>
+                <div class="servicio-imagen-container">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Explotación agrícola" class="servicio-imagen" loading="lazy">
+                    <div class="servicio-overlay"></div>
+                </div>
+                <div class="servicio-contenido">
+                    <div class="servicio-icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="servicio-nombre">Explotación Agrícola</h3>
+                    <p class="servicio-descripcion">Cultivos sostenibles y cría de animales con tecnología de punta,
+                        certificación ecológica y responsabilidad ambiental.</p>
+                    <ul class="servicio-beneficios">
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Agricultura regenerativa</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Certificación orgánica</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Trazabilidad completa</li>
+                    </ul>
+                    <a href="#contacto" class="servicio-cta">
+                        Conocer métodos
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="servicio-card servicio-salud">
+                <div class="servicio-badge">Nuevo</div>
+                <div class="servicio-imagen-container">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Servicios de salud" class="servicio-imagen" loading="lazy">
+                    <div class="servicio-overlay"></div>
+                </div>
+                <div class="servicio-contenido">
+                    <div class="servicio-icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                            <line x1="6" y1="1" x2="6" y2="4" />
+                            <line x1="10" y1="1" x2="10" y2="4" />
+                            <line x1="14" y1="1" x2="14" y2="4" />
+                        </svg>
+                    </div>
+                    <h3 class="servicio-nombre">Salud Integral</h3>
+                    <p class="servicio-descripcion">Atención médica especializada con equipamiento de última generación
+                        y enfoque preventivo para el bienestar completo.</p>
+                    <ul class="servicio-beneficios">
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Medicina preventiva</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Tecnología avanzada</li>
+                        <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg> Enfoque holístico</li>
+                    </ul>
+                    <a href="#contacto" class="servicio-cta">
+                        Solicitar información
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
         </div>
-        <div class="servicio-item">
-            <h3>Servicios de Salud (CIIU 8690)</h3>
-            <p>Atención médica y servicios complementarios en salud.</p>
+
+        <div class="servicios-extra">
+            <p>¿Necesitas algo diferente? <a href="contacto.html">Hablemos sobre soluciones personalizadas</a></p>
         </div>
     </section>
 
     <footer>
-        <!-- Mismo footer que index.html -->
+        <p>&copy; 2025 El Tandal SRL. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
